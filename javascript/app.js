@@ -10,37 +10,37 @@ nex.onclick = function () {
     if (itemActive >= countItem) {
         itemActive = 0;
     }
-showSlider() 
+    showSlider()
 };
-prev.onclick = function (){
-itemActive = itemActive - 1;
-if(itemActive < 0){
-    itemActive = countItem - 1;
+prev.onclick = function () {
+    itemActive = itemActive - 1;
+    if (itemActive < 0) {
+        itemActive = countItem - 1;
+    };
+
+    showSlider()
+
 };
 
-showSlider()
-
-};
-
-function showSlider(){
-let itemActiveOld = document.querySelector('.slider .list .item.active')
-let thumActivOld = document.querySelector('.thumbunali .item.active')
-itemActiveOld.classList.remove('active')
-thumActivOld.classList.remove('active')
+function showSlider() {
+    let itemActiveOld = document.querySelector('.slider .list .item.active')
+    let thumActivOld = document.querySelector('.thumbunali .item.active')
+    itemActiveOld.classList.remove('active')
+    thumActivOld.classList.remove('active')
 
 
-item[itemActive].classList.add('active')
-thum[itemActive].classList.add('active')
+    item[itemActive].classList.add('active')
+    thum[itemActive].classList.add('active')
 
 }
 
-thum.forEach((thum , index) =>{
+thum.forEach((thum, index) => {
     thum.addEventListener('click', () => {
-       itemActive = index
-       showSlider();
-    }) 
+        itemActive = index
+        showSlider();
+    })
 });
 
-let refreshInterval = setInterval(() =>{
-nex.click();
+let refreshInterval = setInterval(() => {
+    nex.click();
 }, 6000)
